@@ -1,0 +1,74 @@
+.form {
+  min-height: 20vh;
+  width: min(80ch, 100vw - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__legend {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+
+  label {
+    width: 90%;
+    @media (min-width: 650px) {
+      flex: 2;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 650px) {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 18px;
+    border: 1.5px solid hsl(223, 100%, 88%);
+    color: hsl(209, 33%, 12%);
+    border-radius: 999999px;
+
+    &::placeholder {
+      color: hsl(223, 100%, 88%);
+    }
+
+    &:focus {
+      border: 1.5px solid hsl(223, 87%, 63%);
+      outline: none;
+    }
+  }
+
+  &__btn {
+    margin-top: 15px;
+    width: 90%;
+    padding: 1rem 1rem;
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    background-color: hsl(223, 87%, 63%);
+    border-radius: 999999px;
+    cursor: pointer;
+
+    @media (min-width: 650px) {
+      margin-top: 0;
+      flex: 1;
+    }
+
+    &:hover {
+      background-color: hsla(223, 87%, 63%, 0.751);
+    }
+  }
+}
