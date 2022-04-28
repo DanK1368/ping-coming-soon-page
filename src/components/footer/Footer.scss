@@ -1,5 +1,5 @@
 .footer {
-  min-height: 20vh;
+  min-height: 25vh;
   width: min(30ch, 100vw - 2rem);
   margin: 0px auto;
   display: flex;
@@ -7,16 +7,24 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media (min-width: 650px) {
+    margin-bottom: 2rem;
+    min-height: 20vh;
+  }
 }
 
 .social {
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
-  height: 40px;
 
   &__icon {
-    max-width: 100%;
+    color: hsl(223, 87%, 63%);
+
+    &:hover {
+      color: hsl(223, 85%, 53%);
+    }
   }
 }
 
