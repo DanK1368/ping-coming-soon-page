@@ -1,11 +1,12 @@
 .illustration {
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   display: flex;
   justify-content: center;
+  margin-top: 5vh;
 
   &__img {
-    width: 90%;
+    width: 100%;
     object-fit: contain;
   }
 }
