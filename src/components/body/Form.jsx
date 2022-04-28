@@ -2,11 +2,15 @@ import { useState } from "react";
 import "./Form.scss";
 
 function Form() {
+  const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleChange = e => {
-    if (!emailPattern.test(e.target.value)) {
+    console.log(e.target.value);
+    setEmail(e.target.value);
+    if (!emailPattern.test(email)) {
       setError(true);
     } else {
       setError(false);
@@ -15,6 +19,16 @@ function Form() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (email.length === 0) {
+      setError(true);
+      setErrorMsg("Whoops! It looks like you forgot to add your email");
+    } else if (!emailPattern.test(email)) {
+      setErrorMsg("Please provide a valid email address");
+    } else {
+      setError(false);
+      setErrorMsg("");
+      setEmail("");
+    }
   };
 
   return (
@@ -27,15 +41,12 @@ function Form() {
             className={`form__input ${error ? "invalid" : ""}`}
             type="email"
             placeholder="Your email address"
+            value={email}
             onChange={handleChange}
           />
-          {error && (
-            <span className="error">Please provide a valid email address</span>
-          )}
+          {error && <span className="error">{errorMsg}</span>}
         </label>
-        <button className="form__btn" type="submit">
-          Notify Me
-        </button>
+        <button className="form__btn">Notify Me</button>
       </div>
     </form>
   );
