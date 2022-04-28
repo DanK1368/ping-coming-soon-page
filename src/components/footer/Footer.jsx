@@ -1,27 +1,21 @@
 import "./Footer.scss";
-import facebookIcon from "../../images/facebook-icon.svg";
-import twitterIcon from "../../images/twitter-icon.svg";
-import instagramIcon from "../../images/instagram-icon.svg";
+import { BsFacebook } from "react-icons/bs";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { BsInstagram } from "react-icons/bs";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="social">
-        <img
-          className="social__icon"
-          src={facebookIcon}
-          alt="facebook social media icon"
-        />
-        <img
-          className="social__icon"
-          src={twitterIcon}
-          alt="facebook social media icon"
-        />
-        <img
-          className="social__icon"
-          src={instagramIcon}
-          alt="facebook social media icon"
-        />
+        <a href="#">
+          <BsFacebook className="social__icon" size={40} />
+        </a>
+        <a href="#">
+          <AiFillTwitterCircle className="social__icon" size={43} />
+        </a>
+        <a href="#">
+          <BsInstagram className="social__icon" size={40} />
+        </a>
       </div>
       <p className="copyright">&copy; Copyright Ping. All rights reserved.</p>
     </footer>
