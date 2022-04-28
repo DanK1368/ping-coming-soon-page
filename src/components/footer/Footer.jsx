@@ -8,13 +8,13 @@ function Footer() {
     <footer className="footer">
       <div className="social">
         <a href="#">
-          <BsFacebook className="social__icon" size={40} />
+          <BsFacebook className="social__icon" size={30} />
         </a>
         <a href="#">
-          <AiFillTwitterCircle className="social__icon" size={43} />
+          <AiFillTwitterCircle className="social__icon" size={33} />
         </a>
         <a href="#">
-          <BsInstagram className="social__icon" size={40} />
+          <BsInstagram className="social__icon" size={30} />
         </a>
       </div>
       <p className="copyright">&copy; Copyright Ping. All rights reserved.</p>
