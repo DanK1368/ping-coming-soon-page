@@ -33,7 +33,7 @@ function Form() {
 
   return (
     <form className="form" noValidate onSubmit={handleSubmit}>
-      <p className="form__legend">Subscribe and get notified</p>
+      <p className="form__title">Subscribe and get notified</p>
       <div className="form__wrapper">
         <label>
           <input
