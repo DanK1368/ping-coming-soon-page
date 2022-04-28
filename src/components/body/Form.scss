@@ -1,5 +1,5 @@
 .form {
-  min-height: 20vh;
+  min-height: clamp(10vh, 100%, 20vh);
   width: min(80ch, 100vw - 2rem);
   margin-left: auto;
   margin-right: auto;
@@ -8,20 +8,28 @@
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 650px) {
+    justify-content: flex-start;
+  }
+
   &__legend {
     margin-bottom: 30px;
-    font-size: 14px;
+    font-size: clamp(15px, 1vw + 0.5rem, 20px);
   }
 
   label {
     width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
     @media (min-width: 650px) {
       flex: 2;
     }
   }
 
   &__wrapper {
-    width: 100%;
+    width: min(100%, 820px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +38,7 @@
     @media (min-width: 650px) {
       flex-direction: row;
       gap: 1.5rem;
+      margin-top: 2rem;
     }
   }
 
@@ -37,7 +46,7 @@
     width: 100%;
     padding: 1rem 1rem;
     font-size: 18px;
-    border: 1.5px solid hsl(223, 100%, 88%);
+    border: 1px solid hsl(223, 100%, 88%);
     color: hsl(209, 33%, 12%);
     border-radius: 999999px;
 
@@ -46,8 +55,12 @@
     }
 
     &:focus {
-      border: 1.5px solid hsl(223, 87%, 63%);
+      border: 1px solid hsl(223, 87%, 63%);
       outline: none;
+    }
+
+    &.invalid {
+      border: 1px solid hsl(354, 100%, 66%);
     }
   }
 
@@ -61,6 +74,7 @@
     background-color: hsl(223, 87%, 63%);
     border-radius: 999999px;
     cursor: pointer;
+    box-shadow: 0px 3px 6px 2px hsl(223, 100%, 88%);
 
     @media (min-width: 650px) {
       margin-top: 0;
@@ -69,6 +83,20 @@
 
     &:hover {
       background-color: hsla(223, 87%, 63%, 0.751);
+    }
+  }
+
+  .error {
+    margin: 10px 0;
+    text-align: center;
+    font-style: italic;
+    color: hsl(354, 100%, 66%);
+
+    @media (min-width: 650px) {
+      margin: 0;
+      position: absolute;
+      bottom: -30px;
+      left: 30px;
     }
   }
 }
