@@ -37,7 +37,6 @@ function Form() {
       <div className="form__wrapper">
         <label>
           <input
-            formNoValidate
             className={`form__input ${error ? "invalid" : ""}`}
             type="email"
             placeholder="Your email address"
