@@ -42,8 +42,13 @@ function Form() {
             placeholder="Your email address"
             value={email}
             onChange={handleChange}
+            aria-describedby="error-email-input"
           />
-          {error && <span className="error">{errorMsg}</span>}
+          {error && (
+            <div aria-live="polite" id="error-email-input">
+              <span className="error">{errorMsg}</span>
+            </div>
+          )}
         </label>
         <button className="form__btn">Notify Me</button>
       </div>
